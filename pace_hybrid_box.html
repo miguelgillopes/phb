@@ -1,0 +1,2078 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PACE Hybrid Box — Cross, Hyrox & Personal Training em Viseu</title>
+
+<!-- SEO -->
+<meta name="description" content="PACE Hybrid Box é a nova box em Viseu. Treina Cross, Hyrox e Personal Training. Marca a tua aula hoje.">
+<meta name="author" content="PACE Hybrid Box">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pacehybridbox.com/">
+
+<!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pacehybridbox.com/">
+<meta property="og:title" content="PACE Hybrid Box — Cross, Hyrox & Personal Training em Viseu">
+<meta property="og:description" content="Treina mais. Vai mais longe. Cross, Hyrox e Personal Training em Viseu, Portugal.">
+<meta property="og:image" content="https://pacehybridbox.com/geral.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:site_name" content="PACE Hybrid Box">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PACE Hybrid Box — Cross, Hyrox & Personal Training em Viseu">
+<meta name="twitter:description" content="Treina mais. Vai mais longe. Cross, Hyrox e Personal Training em Viseu, Portugal.">
+<meta name="twitter:image" content="https://pacehybridbox.com/geral.png">
+
+<link rel="shortcut icon" href="favicon_io/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+<link rel="mask-icon" href="favicon_io/favicon-32x32.png" color="#1A1AFF">
+<link rel="manifest" href="favicon_io/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet"></noscript>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue: #1A1AFF;
+  --blue-dim: #1212CC;
+  --white: #FFFFFF;
+  --black: #080808;
+  --gray-dark: #111111;
+  --gray-mid: #1e1e1e;
+  --gray-line: #252525;
+  --gray-text: #9a9a9a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Barlow', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 48px;
+  background: rgba(8,8,8,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--gray-line);
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  text-decoration: none;
+}
+.nav-logo span:first-child {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.1em;
+}
+.nav-logo span:last-child {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--gray-text);
+  border: 1px solid var(--gray-line);
+  padding: 2px 5px;
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--gray-text);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-links a.is-active {
+  color: var(--white);
+  border-bottom: 1px solid var(--blue);
+  padding-bottom: 2px;
+}
+
+.nav-cta {
+  background: var(--blue);
+  color: var(--white) !important;
+  padding: 10px 22px;
+  font-size: 11px !important;
+  letter-spacing: 0.2em;
+}
+.nav-cta:hover { background: var(--blue-dim); color: var(--white) !important; }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  background-image: url('geral.png');
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 0.8s ease;
+}
+
+.hero-bg-img.visible {
+  opacity: 0.15;
+}
+
+.hero-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(100%);
+  opacity: 0.22;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+.hero-bg-video.done {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 60%, rgba(26,26,255,0.12) 0%, transparent 70%),
+    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.02) 80px),
+    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.02) 80px);
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  background: rgba(26,26,255,0.12);
+  padding: 8px 20px;
+  border: 1px solid rgba(26,26,255,0.3);
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(80px, 18vw, 200px);
+  line-height: 0.88;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+.hero-title .outline {
+  -webkit-text-stroke: 2px rgba(255,255,255,0.2);
+  color: transparent;
+}
+
+.hero-sub {
+  display: inline-block;
+  border: 2px solid var(--white);
+  padding: 8px 28px;
+  font-size: clamp(14px, 2vw, 20px);
+  font-weight: 800;
+  letter-spacing: 0.35em;
+  color: var(--white);
+  margin-top: -4px;
+}
+
+.hero-tagline {
+  margin-top: 36px;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 400;
+  color: var(--gray-text);
+  max-width: 420px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+.hero-tagline strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray-text);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  animation: bounce 2s infinite;
+}
+.hero-scroll::after {
+  content: '';
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gray-text), transparent);
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ── SECTION COMMON ── */
+section {
+  padding: 100px 48px;
+}
+
+.section-header {
+  margin-bottom: 64px;
+}
+
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 8vw, 80px);
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.section-title .outline {
+  -webkit-text-stroke: 2px rgba(255,255,255,0.2);
+  color: transparent;
+}
+
+/* ── A BOX ── */
+#abox {
+  background: var(--gray-dark);
+  border-top: 1px solid var(--gray-line);
+  border-bottom: 1px solid var(--gray-line);
+  position: relative;
+  overflow: clip;
+  scroll-margin-top: 82px;
+}
+
+.abox-bg-img {
+  position: absolute;
+  inset: 0;
+  background-image: url('box.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  opacity: 0.12;
+  z-index: 0;
+}
+
+.abox-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.abox-left .section-header { margin-bottom: 32px; }
+
+.abox-body {
+  color: #aaa;
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 28px;
+  text-align: justify;
+}
+
+.abox-body strong { color: var(--white); font-weight: 700; }
+
+.abox-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--gray-line);
+  border: 1px solid var(--gray-line);
+  margin-top: 40px;
+}
+
+.stat {
+  background: var(--black);
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: var(--blue);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  display: block;
+}
+
+.stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gray-text);
+  text-transform: uppercase;
+  margin-top: 6px;
+  display: block;
+}
+
+.abox-visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.abox-card {
+  background: var(--gray-mid);
+  border: 1px solid var(--gray-line);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.abox-card:first-child {
+  grid-column: 1 / -1;
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.abox-card-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.abox-card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+}
+
+.abox-card-text {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+}
+
+.abox-card:first-child .abox-card-text { color: rgba(255,255,255,0.85); }
+
+/* ── MODALIDADES ── */
+#modalidades {
+  background: var(--black);
+  max-width: 100%;
+  scroll-margin-top: 82px;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
+}
+
+.modalidades-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.modalidades-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--gray-line);
+  border: 1px solid var(--gray-line);
+}
+
+.mod-card {
+  background: var(--black);
+  padding: 52px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+  justify-content: space-between;
+}
+.mod-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  opacity: 0.15;
+  z-index: 0;
+}
+.mod-card > *:not(.mod-card-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.mod-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+  z-index: 2;
+}
+
+.mod-card:hover { background: var(--gray-dark); }
+.mod-card:hover::before { transform: scaleX(1); }
+
+.mod-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 72px;
+  color: rgba(255, 255, 255, 0.12);
+  line-height: 1;
+  position: absolute;
+  top: 16px; right: 24px;
+  letter-spacing: 0;
+  transition: color 0.3s, text-shadow 0.3s;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.35);
+}
+.mod-card:hover .mod-num {
+  color: rgba(26, 26, 255, 0.15);
+  -webkit-text-stroke: 1.5px var(--blue);
+  text-shadow: 0 0 40px rgba(26, 26, 255, 0.4);
+}
+
+.mod-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 4vw, 52px);
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.mod-tag {
+  display: inline-block;
+  background: var(--blue);
+  padding: 4px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+
+.mod-desc {
+  font-size: 15px;
+  color: #888;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.mod-desc strong { color: var(--white); font-weight: 700; }
+
+.mod-features {
+  list-style: none;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mod-features li {
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mod-features li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+
+/* ── HORÁRIOS ── */
+#horarios {
+  background: var(--gray-dark);
+  border-top: 1px solid var(--gray-line);
+  border-bottom: 1px solid var(--gray-line);
+  scroll-margin-top: 82px;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+.horarios-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.horarios-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--gray-line);
+  border: 1px solid var(--gray-line);
+}
+
+/* bloco ímpar sozinho na última linha → ocupa as 2 colunas */
+.horario-block:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.horario-block {
+  background: var(--black);
+  padding: 52px 48px;
+}
+
+.horario-block-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 7vw, 72px);
+  letter-spacing: 0.1em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.horario-badge {
+  display: inline-block;
+  background: var(--blue);
+  padding: 7px 16px;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  margin-bottom: 40px;
+}
+
+.day-group { margin-bottom: 28px; }
+
+.day-label {
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--gray-text);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.time-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.time-pill {
+  background: var(--blue);
+  color: var(--white);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 4vw, 38px);
+  letter-spacing: 0.05em;
+  padding: 10px 22px 8px;
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+  cursor: default;
+  transition: filter 0.15s, transform 0.15s;
+}
+
+.time-pill:hover {
+  filter: brightness(1.12);
+  transform: translateY(-3px);
+}
+
+.time-pill.wide { flex: 100%; min-width: unset; }
+
+/* ── CONTACTO ── */
+#contacto {
+  background: var(--black);
+  scroll-margin-top: 82px;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 700px;
+}
+
+.contacto-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gray-text);
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: var(--gray-mid);
+  border: 1px solid var(--gray-line);
+  color: var(--white);
+  padding: 14px 18px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--blue);
+  background: rgba(26,26,255,0.05);
+}
+
+.form-group select option { background: var(--gray-dark); }
+
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.btn-submit {
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: 18px 40px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 8px;
+}
+.btn-submit:hover { background: var(--blue-dim); }
+.btn-submit:active { transform: scale(0.99); }
+
+.gdpr-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+  cursor: pointer;
+}
+
+.gdpr-check input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  border: 1px solid var(--gray-line);
+  background: var(--gray-mid);
+  cursor: pointer;
+  margin-top: 2px;
+  position: relative;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.gdpr-check input[type="checkbox"]:checked {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.gdpr-check input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 11px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.gdpr-check input[type="checkbox"].error {
+  border-color: #ff2828;
+}
+
+.gdpr-check-label {
+  font-size: 12px;
+  color: var(--gray-text);
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contact-info-block {
+  border-left: 3px solid var(--blue);
+  padding-left: 24px;
+  transition: background 0.3s;
+}
+
+@keyframes socials-highlight {
+  0%   { border-left-color: var(--blue); box-shadow: none; }
+  40%  { border-left-color: #5c5cff; box-shadow: -4px 0 18px rgba(26,26,255,0.35); }
+  100% { border-left-color: var(--blue); box-shadow: none; }
+}
+
+.contact-info-block.is-highlighted {
+  animation: socials-highlight 1.2s ease-in-out forwards;
+  border-radius: 2px;
+}
+
+.contact-info-block h4 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.contact-info-block p {
+  font-size: 15px;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.contact-info-block p strong { color: var(--white); font-weight: 700; }
+
+.ver-no-mapa { display: none; }
+@media (max-width: 768px) {
+  .ver-no-mapa { display: inline-block; }
+}
+
+.social-links {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gray-mid);
+  border: 1px solid var(--gray-line);
+  color: var(--white);
+  text-decoration: none;
+  padding: 14px 22px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: border-color 0.2s, background 0.2s;
+  flex: 1;
+  justify-content: center;
+}
+
+.social-link:hover {
+  border-color: var(--blue);
+  background: rgba(26,26,255,0.08);
+}
+
+.social-icon {
+  width: 18px;
+  height: 18px;
+  fill: var(--white);
+  flex-shrink: 0;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--gray-dark);
+  border-top: 1px solid var(--gray-line);
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer-copy {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--gray-text);
+  text-transform: uppercase;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.footer-legal-links a {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--gray-text);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-legal-links a:hover { color: var(--white); }
+
+/* focus-visible personalizado */
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* ── SCROLL REVEAL ── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+[data-reveal][data-delay="1"] { transition-delay: 0.1s; }
+[data-reveal][data-delay="2"] { transition-delay: 0.2s; }
+[data-reveal][data-delay="3"] { transition-delay: 0.3s; }
+[data-reveal][data-delay="4"] { transition-delay: 0.4s; }
+[data-reveal][data-delay="5"] { transition-delay: 0.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .hero-bg-video { transition: none; }
+  .hero-bg-img   { transition: none; }
+}
+
+/* ── NOSCRIPT ── */
+.noscript-warning {
+  background: rgba(255,40,40,0.08);
+  border: 1px solid #ff2828;
+  color: #ff8888;
+  padding: 16px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+/* ── PRIVACY MODAL ── */
+.privacy-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.privacy-modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.privacy-modal {
+  background: var(--gray-dark);
+  border: 1px solid var(--gray-line);
+  max-width: 720px;
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.privacy-modal-overlay.is-open .privacy-modal {
+  transform: translateY(0);
+}
+
+.privacy-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--gray-line);
+  flex-shrink: 0;
+}
+
+.privacy-modal-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.privacy-modal-close {
+  background: none;
+  border: 1px solid var(--gray-line);
+  color: var(--gray-text);
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, color 0.2s;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.privacy-modal-close:hover {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.privacy-modal-body {
+  overflow-y: auto;
+  padding: 32px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.privacy-modal-body h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  margin: 32px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gray-line);
+}
+
+.privacy-modal-body h3:first-child { margin-top: 0; }
+
+.privacy-modal-body p {
+  font-size: 14px;
+  color: var(--gray-text);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.privacy-modal-body p strong { color: var(--white); }
+
+.privacy-modal-body ul {
+  list-style: none;
+  margin: 0 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.privacy-modal-body ul li {
+  font-size: 14px;
+  color: var(--gray-text);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.privacy-modal-body ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  background: var(--blue);
+}
+
+.privacy-modal-body a { color: var(--blue); }
+
+.privacy-modal-updated {
+  font-size: 11px;
+  color: var(--gray-text);
+  letter-spacing: 0.1em;
+  margin-bottom: 28px;
+  border-left: 3px solid var(--blue);
+  padding-left: 14px;
+}
+
+.privacy-placeholder {
+  background: rgba(26,26,255,0.08);
+  border: 1px dashed rgba(26,26,255,0.4);
+  color: rgba(26,26,255,0.8);
+  padding: 2px 8px;
+  font-style: italic;
+  font-size: 12px;
+  border-radius: 2px;
+}
+
+/* ── FORM SUCCESS MSG ── */
+.form-success {
+  display: none;
+  background: rgba(26,26,255,0.1);
+  border: 1px solid var(--blue);
+  padding: 20px 24px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  text-align: center;
+}
+
+/* ── HAMBURGER ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 200;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--white);
+  transition: transform 0.3s, opacity 0.3s, width 0.3s;
+  transform-origin: center;
+}
+
+.hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.is-open span:nth-child(2) { opacity: 0; width: 0; }
+.hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+nav.menu-open .nav-logo { opacity: 0; pointer-events: none; transition: opacity 0.2s; }
+nav .nav-logo { transition: opacity 0.2s; }
+nav.menu-open { border-bottom-color: transparent; background: transparent; backdrop-filter: none; }
+
+/* ── MOBILE MENU ── */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  z-index: 190;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100%;
+  gap: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobile-menu-top,
+.mobile-menu-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px 40px;
+}
+
+.mobile-link {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 8vw, 40px);
+  letter-spacing: 0.12em;
+  color: var(--white);
+  text-decoration: none;
+  text-align: center;
+  transition: color 0.2s;
+  display: block;
+  width: 100%;
+}
+
+.mobile-link:hover { color: var(--blue); }
+
+.mobile-logo {
+  display: block;
+  padding: 24px 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  width: 100%;
+  text-align: center;
+}
+
+.mobile-logo img {
+  max-width: clamp(240px, 40vw, 520px);
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.mobile-cta {
+  display: inline-block;
+  background: var(--blue);
+  color: var(--white);
+  text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 18px 48px;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.mobile-cta:hover { background: var(--blue-dim); }
+
+.mobile-socials {
+  margin-top: auto;
+  padding: 20px 0 32px;
+  padding-bottom: max(32px, env(safe-area-inset-bottom));
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+
+.mobile-menu-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  padding: 24px 0;
+}
+
+.mobile-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+
+.mobile-social-icon:hover { opacity: 1; }
+
+.mobile-social-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--white);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hamburger { display: flex; }
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  section { padding: 80px 24px; }
+  .abox-inner,
+  .contacto-inner { grid-template-columns: 1fr; gap: 48px; }
+  .abox-body { font-size: 15px; }
+  .abox-stats { grid-template-columns: repeat(3, 1fr); }
+  .stat { padding: 20px 10px; }
+  .stat-num { font-size: 36px; }
+  .stat-label { font-size: 10px; letter-spacing: 0.1em; }
+  .modalidades-grid { grid-template-columns: 1fr; gap: 12px; }
+  .horarios-grid { grid-template-columns: 1fr; }
+  footer { padding: 16px 24px; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .form-row { grid-template-columns: 1fr; }
+  .abox-visual { grid-template-columns: 1fr; }
+  .abox-card:first-child { grid-column: auto; }
+
+  /* Contactos — info lateral maior em mobile */
+  .contact-info { gap: 40px; }
+  .contact-info-block { padding-left: 20px; }
+  .contact-info-block h4 { font-size: 13px; letter-spacing: 0.25em; margin-bottom: 10px; }
+  .contact-info-block p { font-size: 18px; line-height: 1.7; }
+  .mod-features li { font-size: 15px; }
+
+  /* Cards modalidades — estado sempre "activo" no mobile (sem hover) */
+  .mod-card { background: var(--gray-dark); padding: 36px 24px; }
+  .mod-card-bg { opacity: 0.22; }
+  .mod-num {
+    position: static;
+    font-size: 52px;
+    color: rgba(26, 26, 255, 0.15);
+    -webkit-text-stroke: 1.5px var(--blue);
+    text-shadow: 0 0 40px rgba(26, 26, 255, 0.4);
+    line-height: 1;
+    align-self: flex-end;
+  }
+  .mod-card > div:first-of-type {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .social-links { flex-direction: column; gap: 12px; }
+  .social-link { padding: 18px 24px; font-size: 14px; justify-content: flex-start; }
+  .social-icon { width: 22px; height: 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <img src="logo.jpg" alt="PACE - Hybrid Box" width="809" height="500" style="height: 48px; width: auto; object-fit: contain;">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#abox">A Box</a></li>
+    <li><a href="#modalidades">Modalidades</a></li>
+    <li><a href="#horarios">Horários</a></li>
+    <li><a href="#contacto" class="nav-cta">Marcar Aula</a></li>
+    <li><a href="#contacto">Contactos</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-top">
+      <a href="#abox" class="mobile-link" onclick="closeMenu()">A Box</a>
+      <a href="#modalidades" class="mobile-link" onclick="closeMenu()">Modalidades</a>
+    </div>
+    <a href="#hero" class="mobile-logo" onclick="closeMenu()">
+      <img src="logo_blank.png" alt="PACE - Hybrid Box" width="809" height="500" loading="lazy">
+    </a>
+    <div class="mobile-menu-bottom">
+      <a href="#horarios" class="mobile-link" onclick="closeMenu()">Horários</a>
+      <a href="#contacto" class="mobile-cta" onclick="closeMenu()">Marcar Aula</a>
+    </div>
+  </div>
+  <div class="mobile-socials">
+    <a href="https://wa.me/351927905545" target="_blank" class="mobile-social-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/pacehybridbox/" target="_blank" class="mobile-social-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/pacehybridbox" target="_blank" class="mobile-social-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-img"></div>
+    <video class="hero-bg-video" id="heroBgVideo" autoplay muted playsinline webkit-playsinline preload="auto" poster="geral.png" disableRemotePlayback x-webkit-airplay="deny">
+      <source src="video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-bg-overlay"></div>
+  </div>
+  <span class="hero-eyebrow">Viseu · Portugal</span>
+  <img src="logo_blank.png" alt="PACE - Hybrid Box" width="809" height="500" style="max-width: clamp(240px, 40vw, 520px); width: 100%; height: auto; object-fit: contain; margin-bottom: 8px; position: relative; z-index: 2;">
+  <p class="hero-tagline" style="position: relative; z-index: 2;">Treina mais. Vai mais longe.<br><strong>Supera os teus limites</strong> com Cross, Hyrox e Personal Training.</p>
+  <div class="hero-scroll" style="z-index: 2;">Scroll</div>
+</section>
+
+<!-- A BOX -->
+<section id="abox">
+  <div class="abox-bg"></div>
+  <!-- <div class="abox-bg-img"></div> -->
+  <div class="abox-inner">
+    <div class="abox-left">
+      <div class="section-header">
+        <span class="section-eyebrow">Quem Somos</span>
+        <div class="section-title">A <span class="outline">BOX</span></div>
+      </div>
+      <p class="abox-body">
+        A <strong>PACE</strong> nasceu em Viseu com uma missão clara: criar um espaço onde o treino de alta intensidade encontra a comunidade. Somos mais do que um ginásio — somos um ecossistema de atletas, coaches e pessoas determinadas a evoluir.
+      </p>
+      <p class="abox-body">
+        Seja o teu objetivo a competição HYROX, a progressão no Cross ou o treino personalizado com acompanhamento, na PACE tens tudo o que precisas para chegar mais longe.
+      </p>
+      <div class="abox-stats">
+        <div class="stat">
+          <span class="stat-num">3</span>
+          <span class="stat-label">Modalidades</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">6</span>
+          <span class="stat-label">Dias/Semana</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Comprometidos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="abox-visual">
+      <div class="abox-card">
+        <div class="abox-card-icon">🏆</div>
+        <div class="abox-card-title">COMUNIDADE ACIMA DE TUDO</div>
+        <p class="abox-card-text">Na PACE, cada membro faz parte de algo maior.<br>O teu sucesso é o nosso sucesso — dentro e fora da box.</p>
+      </div>
+      <div class="abox-card">
+        <div class="abox-card-icon">⚡</div>
+        <div class="abox-card-title">COACHES ESPECIALIZADOS</div>
+        <p class="abox-card-text">Treina com profissionais certificados, apaixonados pelo que fazem.</p>
+      </div>
+      <div class="abox-card">
+        <div class="abox-card-icon">🎯</div>
+        <div class="abox-card-title">RESULTADOS REAIS</div>
+        <p class="abox-card-text">Programação estruturada para evoluíres a cada sessão, ao teu ritmo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODALIDADES -->
+<section id="modalidades">
+  <div class="modalidades-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">O Que Treinamos</span>
+      <div class="section-title">MODALIDADES</div>
+    </div>
+    <div class="modalidades-grid">
+
+      <div class="mod-card" data-reveal data-delay="1">
+        <div class="mod-card-bg" style="background-image: url('cross2.png');"></div>
+        <span class="mod-num">01</span>
+        <div>
+          <div class="mod-title">CROSS</div>
+          <span class="mod-tag">Força &amp; Condicionamento</span>
+          <p class="mod-desc" style="margin-top:16px;">Treino funcional de alta intensidade que combina <strong>ginástica, levantamento olímpico e endurance</strong>. Cada aula é diferente — nunca te vais aborrecer.</p>
+        </div>
+        <ul class="mod-features">
+          <li>Aulas adaptáveis para todos os níveis</li>
+          <li>WODs programados diariamente</li>
+          <li>5 horários por dia (Seg–Sex) + Sábado</li>
+        </ul>
+      </div>
+
+      <div class="mod-card" data-reveal data-delay="2">
+        <div class="mod-card-bg" style="background-image: url('hyrox.png');"></div>
+        <span class="mod-num">02</span>
+        <div>
+          <div class="mod-title">HYROX</div>
+          <span class="mod-tag">Fitness Race</span>
+          <p class="mod-desc" style="margin-top:16px;">Prepara-te para a <strong>competição de fitness mais rápida do mundo</strong>. Treino específico para as 8 estações e 8km de corrida que definem o HYROX.</p>
+        </div>
+        <ul class="mod-features">
+          <li>Treino orientado para competição</li>
+          <li>3 horários por dia (Seg–Sex) + Sábado</li>
+          <li>Manhã e noite disponíveis</li>
+        </ul>
+      </div>
+
+      <div class="mod-card" data-reveal data-delay="3">
+        <div class="mod-card-bg" style="background-image: url('pt.png');"></div>
+        <span class="mod-num">03</span>
+        <div>
+          <div class="mod-title">PERSONAL TRAINING</div>
+          <span class="mod-tag">1 a 1</span>
+          <p class="mod-desc" style="margin-top:16px;">Treino <strong>100% personalizado</strong>. Programa adaptado aos teus objetivos, ritmo e disponibilidade.</p>
+        </div>
+        <ul class="mod-features">
+          <li>Avaliação física inicial</li>
+          <li>Acompanhamento contínuo de progressão</li>
+          <li>Horário flexível</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HORÁRIOS -->
+<section id="horarios">
+  <div class="horarios-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Planeamento</span>
+      <div class="section-title">HORÁRIOS</div>
+    </div>
+    <div class="horarios-grid">
+      
+      <!-- CROSS — horários geridos pelo objecto HORARIOS no JS -->
+      <div class="horario-block" data-reveal data-delay="2">
+        <div class="horario-block-title">CROSS</div>
+        <div class="horario-badge">H O R Á R I O S</div>
+        <div data-horario="cross"></div>
+      </div>
+
+      <!-- HYROX — horários geridos pelo objecto HORARIOS no JS -->
+      <div class="horario-block" data-reveal data-delay="1">
+        <div class="horario-block-title">HYROX</div>
+        <div class="horario-badge">H O R Á R I O S</div>
+        <div data-horario="hyrox"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contacto-inner">
+    <div>
+      <div class="section-header" style="margin-bottom: 40px;">
+        <span class="section-eyebrow">Vem Treinar</span>
+        <div class="section-title">MARCAR <span class="outline">AULA</span></div>
+      </div>
+
+      <form id="contactForm" novalidate>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nome <span style="color:var(--blue)">*</span></label>
+          <input type="text" id="field-nome" name="nome" placeholder="O teu nome">
+        </div>
+        <div class="form-group">
+          <label>Telefone <span style="color:var(--blue)">*</span></label>
+          <input type="tel" id="field-telefone" name="telefone" placeholder="9XX XXX XXX">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="field-email" name="email" placeholder="email@exemplo.com">
+      </div>
+
+      <div class="form-group">
+        <label>Modalidade de Interesse <span style="color:var(--blue)">*</span></label>
+        <select id="field-modalidade" name="modalidade">
+          <option value="" disabled selected>Escolhe uma modalidade</option>
+          <option>Cross</option>
+          <option>Hyrox</option>
+          <option>Personal Training</option>
+          <option>Ainda não sei — quero saber mais</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Mensagem (opcional)</label>
+        <textarea id="field-mensagem" name="mensagem" placeholder="Conta-nos um pouco sobre os teus objetivos..."></textarea>
+      </div>
+
+      <!-- Honeypot anti-spam: invisível para humanos, bots preenchem automaticamente -->
+      <div style="position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;" aria-hidden="true" tabindex="-1">
+        <label for="field-website">Website</label>
+        <input type="text" id="field-website" name="website" autocomplete="off" tabindex="-1">
+      </div>
+
+      <label class="gdpr-check">
+        <input type="checkbox" id="field-gdpr" name="gdpr">
+        <span class="gdpr-check-label">
+          Ao submeter este formulário, declaro que li e aceito a recolha e tratamento dos meus dados pessoais (nome, telefone e email) pela PACE - Hybrid Box, exclusivamente para fins de contacto e marcação de aulas. Os meus dados não serão partilhados com terceiros. Tenho direito a aceder, corrigir ou eliminar os meus dados a qualquer momento, em conformidade com o <strong style="color:var(--white)">Regulamento Geral de Proteção de Dados (RGPD — UE 2016/679)</strong>. <span style="color:var(--blue)">*</span>
+        </span>
+      </label>
+
+      <noscript>
+        <div class="noscript-warning">
+          ⚠ O JavaScript está desactivado no teu browser. Para enviar o formulário, activa o JavaScript ou contacta-nos directamente pelo telefone ou redes sociais.
+        </div>
+      </noscript>
+
+      <button type="button" class="btn-submit" onclick="handleSubmit()">Enviar Pedido de Aula</button>
+      <div class="form-success" id="formSuccess">✓ &nbsp;Mensagem enviada! Entraremos em contacto em breve.</div>
+      <div class="form-success" id="formError" style="background:rgba(255,40,40,0.08);border-color:#ff2828;display:none;"></div>
+      <div class="form-success" id="formTokenWarning" style="background:rgba(255,40,40,0.08);border-color:#ff2828;display:none;">⚠ O formulário não está disponível de momento. Contacta-nos directamente pelas redes sociais ou por telefone.</div>
+      <p style="margin-top:20px; font-size:13px; color:var(--gray-text); text-align:center; letter-spacing:0.05em;">
+        Se preferires, contacta-nos diretamente através das
+        <a href="#socials" onclick="highlightSocials(event)" style="color:var(--blue); text-decoration:none; font-weight:700;">redes sociais</a>.
+      </p>
+
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <div class="contact-info-block">
+        <h4>Localização</h4>
+        <a href="https://maps.app.goo.gl/Fi85RHh8B99M2mXZA" target="_blank" onclick="openMaps(event)" style="color:inherit; text-decoration:none;">
+          <p style="color:#aaa; line-height:1.6; cursor:pointer; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">
+            Rua Estrada Velha 229, Lote 8 Fração A<br>
+            <span class="ver-no-mapa" style="margin-top:8px; font-size:11px; font-weight:700; letter-spacing:0.15em; color:var(--blue); text-transform:uppercase;">Obter Direções</span>
+          </p>
+        </a>
+      </div>
+
+      <!-- <div class="contact-info-block">
+        <h4>Telefone</h4>
+        <a href="tel:+351927905545" style="color:#aaa; text-decoration:none; font-size:15px; line-height:1.6; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">
+          +351 927 905 545
+        </a>
+      </div> -->
+
+      <div class="contact-info-block">
+        <h4>Horário de Atendimento</h4>
+        <p>
+          <strong>Segunda a Sexta</strong><br>06:30 – 13:30 / 17:00 – 20:30<br><br>
+          <strong>Sábado</strong><br>09:00 – 13:00
+        </p>
+      </div>
+
+      <div class="contact-info-block" id="socials">
+        <h4>Redes Sociais</h4>
+        <p style="margin-bottom:14px;">Segue-nos e fica a par de tudo o que acontece na box.</p>
+        <div class="social-links">
+          <a href="https://wa.me/351927905545" target="_blank" class="social-link">
+            <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            WhatsApp
+          </a>
+          <a href="https://www.instagram.com/pacehybridbox/" target="_blank" class="social-link">
+            <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/pacehybridbox" target="_blank" class="social-link">
+            <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY MODAL -->
+<div class="privacy-modal-overlay" id="privacyModal" role="dialog" aria-modal="true" aria-label="Política de Privacidade" onclick="closePrivacyModal(event)">
+  <div class="privacy-modal">
+    <div class="privacy-modal-header">
+      <h2>Política de Privacidade</h2>
+      <button class="privacy-modal-close" onclick="closePrivacyModal()" aria-label="Fechar">&times;</button>
+    </div>
+    <div class="privacy-modal-body">
+      <p class="privacy-modal-updated">Última actualização: <strong style="color:var(--white)">27 de Fevereiro de 2026</strong></p>
+
+      <h3>1. Responsável pelo Tratamento</h3>
+      <p>
+        <strong><span class="privacy-placeholder">[Nome ou Denominação Social]</span></strong><br>
+        NIF: <span class="privacy-placeholder">[NIF]</span><br>
+        Morada: Rua Estrada Velha 229, Lote 8 Fracção A, Viseu, Portugal<br>
+        Email: <a href="mailto:pacehybridbox@gmail.com">pacehybridbox@gmail.com</a><br>
+        Telefone: <a href="tel:+351927905545">+351 927 905 545</a>
+      </p>
+
+      <h3>2. Dados Recolhidos</h3>
+      <p>Através do formulário de contacto presente no nosso website, recolhemos os seguintes dados pessoais:</p>
+      <ul>
+        <li><strong>Nome</strong> — para identificação e personalização do contacto</li>
+        <li><strong>Número de telefone</strong> — para retorno de chamada ou envio de informações</li>
+        <li><strong>Endereço de email</strong> (opcional) — para resposta por escrito</li>
+        <li><strong>Modalidade de interesse</strong> — para adequar a resposta ao pedido</li>
+        <li><strong>Mensagem</strong> (opcional) — informação adicional partilhada voluntariamente</li>
+      </ul>
+      <p>Não recolhemos dados sensíveis (saúde, origem étnica, dados biométricos, etc.).</p>
+
+      <h3>3. Finalidade e Base Legal</h3>
+      <p>Os dados são recolhidos exclusivamente para:</p>
+      <ul>
+        <li>Responder ao pedido de informação ou marcação de aula submetido</li>
+        <li>Estabelecer contacto comercial relacionado com os serviços da PACE Hybrid Box</li>
+      </ul>
+      <p>A base legal do tratamento é o <strong>consentimento do titular</strong> (Art.º 6.º, n.º 1, al. a) do RGPD), prestado através da caixa de verificação presente no formulário.</p>
+
+      <h3>4. Prazo de Conservação</h3>
+      <p>Os dados são conservados pelo período estritamente necessário para responder ao pedido, não excedendo <strong>12 meses</strong> após o último contacto, salvo obrigação legal em contrário.</p>
+
+      <h3>5. Partilha com Terceiros</h3>
+      <p>Os seus dados <strong>não são partilhados, vendidos ou cedidos</strong> a terceiros para fins comerciais ou de marketing. O acesso é restrito aos colaboradores da PACE Hybrid Box que necessitem dos dados para responder ao seu pedido.</p>
+      <p>Os dados são transmitidos de forma segura através do servidor de alojamento do website (<span class="privacy-placeholder">[nome do hosting]</span>) e processados pelo sistema de email do domínio <strong>pacehybridbox.com</strong>.</p>
+
+      <h3>6. Direitos do Titular</h3>
+      <p>Nos termos do RGPD (UE 2016/679), tem os seguintes direitos:</p>
+      <ul>
+        <li><strong>Acesso</strong> — saber que dados temos sobre si</li>
+        <li><strong>Rectificação</strong> — corrigir dados incorrectos ou incompletos</li>
+        <li><strong>Apagamento</strong> — solicitar a eliminação dos seus dados (“direito a ser esquecido”)</li>
+        <li><strong>Limitação</strong> — restringir o tratamento em determinadas circunstâncias</li>
+        <li><strong>Portabilidade</strong> — receber os seus dados em formato estruturado</li>
+        <li><strong>Oposição</strong> — opor-se ao tratamento com base em interesses legítimos</li>
+        <li><strong>Retirada do consentimento</strong> — a qualquer momento, sem prejuízo do tratamento anterior</li>
+      </ul>
+      <p>Para exercer qualquer um destes direitos, contacte-nos através de <a href="mailto:geral@pacehybridbox.pt">geral@pacehybridbox.pt</a>. Responderemos no prazo máximo de 30 dias.</p>
+      <p>Tem ainda o direito de apresentar reclamação à autoridade de controlo nacional, a <strong>CNPD</strong> — Comissão Nacional de Protecção de Dados (<a href="https://www.cnpd.pt" target="_blank" rel="noopener">www.cnpd.pt</a>).</p>
+
+      <h3>7. Segurança</h3>
+      <p>Adoptamos medidas técnicas e organizativas adequadas para proteger os seus dados contra acesso não autorizado, perda ou destruição, incluindo transmissão cifrada via HTTPS e armazenamento restrito.</p>
+
+      <h3>8. Cookies</h3>
+      <p>O nosso website utiliza apenas cookies técnicos estritamente necessários ao funcionamento da página. Não utilizamos cookies de rastreamento ou publicidade.</p>
+
+      <h3>9. Alterações a esta Política</h3>
+      <p>Reservamo-nos o direito de actualizar esta Política de Privacidade. Alterações relevantes serão comunicadas através da actualização da data no topo desta página.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-copy">COPYRIGHT &copy; <span id="footer-year">2026</span> PACE HYBRID BOX. TODOS OS DIREITOS RESERVADOS.</p>
+  <div class="footer-legal-links">
+    <a href="#" onclick="openPrivacyModal(event)">Pol&iacute;tica de Privacidade</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+/* Vídeo hero — autoplay silencioso, fallback para foto */
+(function () {
+  const vid = document.getElementById('heroBgVideo');
+  const img = document.querySelector('.hero-bg-img');
+  if (!vid) return;
+
+  function showPhoto() {
+    vid.classList.add('done');
+    if (img) img.classList.add('visible');
+    setTimeout(function () { vid.style.display = 'none'; }, 900);
+  }
+
+  function tryPlay() {
+    var p = vid.play();
+    if (p !== undefined) {
+      p.catch(function () {
+        // Autoplay bloqueado — tenta no primeiro gesto do utilizador
+        function onGesture() {
+          vid.play().catch(showPhoto);
+          document.removeEventListener('touchstart', onGesture);
+          document.removeEventListener('scroll', onGesture);
+        }
+        document.addEventListener('touchstart', onGesture, { once: true, passive: true });
+        document.addEventListener('scroll', onGesture, { once: true, passive: true });
+      });
+    }
+  }
+
+  if (vid.readyState >= 2) {
+    tryPlay();
+  } else {
+    vid.addEventListener('canplay', tryPlay, { once: true });
+  }
+
+  vid.addEventListener('error', showPhoto);
+  vid.addEventListener('stalled', function () { setTimeout(showPhoto, 2000); });
+  vid.addEventListener('ended', showPhoto);
+})();
+
+/* ─────────────────────────────────────────
+   HORÁRIOS — edita aqui sem tocar no HTML
+   wide: true = ocupa a linha toda
+───────────────────────────────────────── */
+const HORARIOS = {
+  cross: [
+    { dias: 'Segunda a Sexta', horas: [
+      { h: '06:30' }, { h: '10:00' }, { h: '12:30' },
+      { h: '18:15' }, { h: '19:30' }
+    ]},
+    { dias: 'Sábado', horas: [{ h: '10:00', wide: true }] }
+  ],
+  hyrox: [
+    { dias: 'Segunda a Sexta', horas: [
+      { h: '06:30' }, { h: '18:30' }, { h: '19:40' },
+    ]},
+    { dias: 'Sábado', horas: [{ h: '09:00', wide: true }] }
+  ]
+};
+
+function renderHorarios() {
+  Object.entries(HORARIOS).forEach(([modalidade, grupos]) => {
+    const bloco = document.querySelector(`[data-horario="${modalidade}"]`);
+    if (!bloco) return;
+    bloco.innerHTML = '';
+    grupos.forEach(grupo => {
+      const div = document.createElement('div');
+      div.className = 'day-group';
+      div.innerHTML = `<div class="day-label">${grupo.dias}</div>
+        <div class="time-grid">
+          ${grupo.horas.map(p => `<div class="time-pill${p.wide ? ' wide' : ''}">${p.h}</div>`).join('')}
+        </div>`;
+      bloco.appendChild(div);
+    });
+  });
+}
+
+renderHorarios();
+
+/* ─────────────────────────────────────────
+   SCROLL REVEAL — IntersectionObserver
+───────────────────────────────────────── */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+
+function openPrivacyModal(e) {
+  if (e) e.preventDefault();
+  document.getElementById('privacyModal').classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePrivacyModal(e) {
+  // Fecha ao clicar no overlay (fora do modal) ou no botão X
+  if (e && e.target !== document.getElementById('privacyModal') && e.type !== 'click') return;
+  if (e && e.currentTarget === document.getElementById('privacyModal') && e.target !== e.currentTarget) return;
+  document.getElementById('privacyModal').classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closePrivacyModal();
+});
+
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const btn = document.getElementById('hamburger');
+  const nav = document.querySelector('nav');
+  const isOpen = menu.classList.toggle('is-open');
+  btn.classList.toggle('is-open', isOpen);
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  btn.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu de navegação');
+  nav.classList.toggle('menu-open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+
+function closeMenu() {
+  const btn = document.getElementById('hamburger');
+  document.getElementById('mobileMenu').classList.remove('is-open');
+  btn.classList.remove('is-open');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.setAttribute('aria-label', 'Abrir menu de navegação');
+  document.querySelector('nav').classList.remove('menu-open');
+  document.body.style.overflow = '';
+}
+
+function openMaps(e) {
+  const googleMapsUrl = 'https://maps.app.goo.gl/Fi85RHh8B99M2mXZA';
+  const lat = '40.6612';
+  const lon = '-7.9099';
+  const label = 'PACE Hybrid Box';
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (!isMobile) return; // desktop: deixa o href normal abrir
+
+  e.preventDefault();
+
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const isAndroid = /Android/i.test(navigator.userAgent);
+
+  if (isIOS) {
+    showMapChooser(googleMapsUrl, lat, lon, label);
+  } else if (isAndroid) {
+    window.location.href = `geo:${lat},${lon}?q=${lat},${lon}(${encodeURIComponent(label)})`;
+  }
+}
+
+function showMapChooser(googleUrl, lat, lon, label) {
+  const existing = document.getElementById('map-chooser');
+  if (existing) existing.remove();
+
+  const overlay = document.createElement('div');
+  overlay.id = 'map-chooser';
+  overlay.style.cssText = `
+    position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:9999;
+    display:flex; align-items:flex-end; justify-content:center;
+    font-family:'Barlow',sans-serif; backdrop-filter:blur(4px);
+  `;
+
+  const iconPin  = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`;
+  const iconNav  = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1AFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>`;
+  const iconApple= `<svg width="18" height="18" viewBox="0 0 24 24" fill="#1A1AFF"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.18 1.27-2.16 3.8.03 3.02 2.65 4.03 2.68 4.04l-.07.28zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>`;
+
+  // URLs correctos por app
+  const wazeUrl  = `https://waze.com/ul/hez4rkxru3`;
+  const appleUrl = 'maps://?ll=40.690009,-7.877407&q=PACE+Hybrid+Box';
+
+  const appRow = (href, icon, name, sub) => `
+    <a href="${href}" style="display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid #252525;color:#fff;text-decoration:none;">
+      <span style="width:40px;height:40px;background:#111;border:1px solid #252525;display:flex;align-items:center;justify-content:center;flex-shrink:0;">${icon}</span>
+      <span style="font-size:15px;font-weight:700;letter-spacing:0.04em;">${name}</span>
+      <svg style="margin-left:auto;flex-shrink:0;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>`;
+
+  overlay.innerHTML = `
+    <div style="background:#141414;width:100%;max-width:480px;border-top:2px solid #1A1AFF;padding:24px 24px 0;">
+      <p style="font-size:10px;font-weight:700;letter-spacing:0.35em;color:#555;text-transform:uppercase;margin-bottom:16px;">Obter Direcções</p>
+      ${appRow(googleUrl, iconPin, 'Google Maps', 'Abrir no Google Maps')}
+      ${appRow(wazeUrl, iconNav, 'Waze', 'Abrir no Waze')}
+      ${appRow(appleUrl, iconApple, 'Apple Maps', 'Abrir no Apple Maps')}
+      <div style="height:max(16px,env(safe-area-inset-bottom));"></div>
+    </div>
+  `;
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.remove();
+  });
+
+  document.body.appendChild(overlay);
+}
+
+function highlightSocials(e) {
+  e.preventDefault();
+  const el = document.getElementById('socials');
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  el.classList.remove('is-highlighted');
+  void el.offsetWidth; // reflow to restart animation
+  el.classList.add('is-highlighted');
+  el.addEventListener('animationend', () => el.classList.remove('is-highlighted'), { once: true });
+}
+
+// Token de sessão anti-spam: obtido uma vez quando a página carrega
+let _formToken = null;
+let _tokenFailed = false;
+fetch('token.php')
+  .then(r => r.json())
+  .then(d => { _formToken = d.token; })
+  .catch(() => {
+    _formToken = null;
+    _tokenFailed = true;
+    const warn = document.getElementById('formTokenWarning');
+    if (warn) warn.style.display = 'block';
+  });
+
+/* ── Nav active state via IntersectionObserver ── */
+(function () {
+  const sections = ['hero', 'abox', 'modalidades', 'horarios', 'contacto'];
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+  const clearActive = () => navLinks.forEach(a => a.classList.remove('is-active'));
+
+  const setActive = (id) => {
+    if (id === 'hero') { clearActive(); return; }
+    navLinks.forEach(a => {
+      const href = a.getAttribute('href');
+      if (href === '#contacto' && a.classList.contains('nav-cta')) return;
+      a.classList.toggle('is-active', href === '#' + id);
+    });
+  };
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    });
+  }, { threshold: 0.35 });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) obs.observe(el);
+  });
+})();
+
+async function handleSubmit() {
+  const nomeEl = document.getElementById('field-nome');
+  const telefoneEl = document.getElementById('field-telefone');
+  const emailEl = document.getElementById('field-email');
+  const modalidadeEl = document.getElementById('field-modalidade');
+  const mensagemEl = document.getElementById('field-mensagem');
+  const gdprEl = document.getElementById('field-gdpr');
+
+  const nome = nomeEl.value.trim();
+  const telefone = telefoneEl.value.trim();
+  const email = emailEl ? emailEl.value.trim() : '';
+  const modalidade = modalidadeEl.value;
+  const gdpr = gdprEl.checked;
+
+  // Validação telefone: aceita formatos PT (9 dígitos, pode ter +351 ou 00351 no início)
+  const telefoneClean = telefone.replace(/[\s\-().]/g, '');
+  const telefoneRegex = /^(\+351|00351)?(2\d{8}|[39]\d{8})$/;
+  const telefoneValido = telefoneRegex.test(telefoneClean);
+
+  // Validação email (apenas se preenchido)
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const emailValido = email === '' || emailRegex.test(email);
+
+  // Reset borders
+  nomeEl.style.borderColor = '';
+  telefoneEl.style.borderColor = '';
+  if (emailEl) emailEl.style.borderColor = '';
+  modalidadeEl.style.borderColor = '';
+  gdprEl.classList.remove('error');
+
+  const erros = [];
+
+  if (!nome) { nomeEl.style.borderColor = '#ff2828'; erros.push('nome'); }
+  if (!telefone) { telefoneEl.style.borderColor = '#ff2828'; erros.push('telefone'); }
+  else if (!telefoneValido) { telefoneEl.style.borderColor = '#ff2828'; erros.push('telefone-invalido'); }
+  if (!emailValido) { if (emailEl) emailEl.style.borderColor = '#ff2828'; erros.push('email-invalido'); }
+  if (!modalidade) { modalidadeEl.style.borderColor = '#ff2828'; erros.push('modalidade'); }
+  if (!gdpr) { gdprEl.classList.add('error'); erros.push('gdpr'); }
+
+  if (erros.length > 0) {
+    const err = document.getElementById('formError');
+    if (erros.includes('telefone-invalido')) {
+      err.textContent = '⚠ Número de telefone inválido. Introduz um número português válido (ex: 912 345 678)';
+    } else if (erros.includes('email-invalido')) {
+      err.textContent = '⚠ Endereço de email inválido';
+    } else if (erros.length === 1 && erros[0] === 'gdpr') {
+      err.textContent = '⚠ É necessário aceitar a política de proteção de dados para continuar';
+    } else {
+      err.textContent = '⚠ Por favor preenche os campos obrigatórios';
+    }
+    err.style.display = 'block';
+    document.getElementById('formSuccess').style.display = 'none';
+    return;
+  }
+
+  document.getElementById('formError').style.display = 'none';
+
+  // Honeypot: se estiver preenchido é bot — silenciosamente descarta
+  const honeypot = document.getElementById('field-website');
+  if (honeypot && honeypot.value !== '') return;
+
+  const btn = document.querySelector('.btn-submit');
+  btn.disabled = true;
+  btn.textContent = 'A enviar...';
+
+  try {
+    const formData = new FormData();
+    formData.append('nome', nome);
+    formData.append('_honeypot', honeypot ? honeypot.value : '');
+    formData.append('_token', _formToken || '');
+    formData.append('telefone', telefone);
+    formData.append('email', email);
+    formData.append('modalidade', modalidade);
+    formData.append('mensagem', mensagemEl ? mensagemEl.value.trim() : '');
+
+    const res = await fetch('enviar.php', {
+      method: 'POST',
+      body: formData
+    });
+
+    const data = await res.json();
+
+    if (res.ok && data.sucesso) {
+      const success = document.getElementById('formSuccess');
+      success.style.display = 'block';
+      nomeEl.value = '';
+      telefoneEl.value = '';
+      if (emailEl) emailEl.value = '';
+      modalidadeEl.value = '';
+      if (mensagemEl) mensagemEl.value = '';
+      gdprEl.checked = false;
+      setTimeout(() => { success.style.display = 'none'; }, 6000);
+    } else if (res.status === 429) {
+      const err = document.getElementById('formError');
+      err.textContent = '⚠ Demasiadas tentativas. Aguarda uma hora antes de tentar novamente.';
+      err.style.display = 'block';
+    } else if (res.status === 403) {
+      const err = document.getElementById('formError');
+      err.textContent = '⚠ Sessão expirada. Recarrega a página e tenta novamente.';
+      err.style.display = 'block';
+      // Renova o token para a próxima tentativa
+      fetch('token.php').then(r => r.json()).then(d => { _formToken = d.token; }).catch(() => {});
+    } else {
+      const err = document.getElementById('formError');
+      err.textContent = '⚠ Erro ao enviar. Tenta novamente ou contacta-nos diretamente.';
+      err.style.display = 'block';
+    }
+  } catch (e) {
+    const err = document.getElementById('formError');
+    err.textContent = '⚠ Sem ligação. Verifica a tua internet e tenta novamente.';
+    err.style.display = 'block';
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Enviar Pedido de Aula';
+}
+</script>
+
+</body>
+</html>

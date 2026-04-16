@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PACE Hybrid Box — Viseu</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue: #1A1AFF;
+  --blue-dim: #1212CC;
+  --white: #FFFFFF;
+  --black: #080808;
+  --gray-dark: #111111;
+  --gray-mid: #1e1e1e;
+  --gray-line: #252525;
+  --gray-text: #888;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Barlow', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 48px;
+  background: rgba(8,8,8,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--gray-line);
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  text-decoration: none;
+}
+.nav-logo span:first-child {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.1em;
+}
+.nav-logo span:last-child {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--gray-text);
+  border: 1px solid var(--gray-line);
+  padding: 2px 5px;
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--gray-text);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+
+.nav-cta {
+  background: var(--blue);
+  color: var(--white) !important;
+  padding: 10px 22px;
+  font-size: 11px !important;
+  letter-spacing: 0.2em;
+}
+.nav-cta:hover { background: var(--blue-dim); color: var(--white) !important; }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  background-image: url('geral.png');
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 60%, rgba(26,26,255,0.12) 0%, transparent 70%),
+    repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.02) 80px),
+    repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.02) 80px);
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  background: rgba(26,26,255,0.12);
+  padding: 8px 20px;
+  border: 1px solid rgba(26,26,255,0.3);
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(80px, 18vw, 200px);
+  line-height: 0.88;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+.hero-title .outline {
+  -webkit-text-stroke: 2px rgba(255,255,255,0.2);
+  color: transparent;
+}
+
+.hero-sub {
+  display: inline-block;
+  border: 2px solid var(--white);
+  padding: 8px 28px;
+  font-size: clamp(14px, 2vw, 20px);
+  font-weight: 800;
+  letter-spacing: 0.35em;
+  color: var(--white);
+  margin-top: -4px;
+}
+
+.hero-tagline {
+  margin-top: 36px;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 400;
+  color: var(--gray-text);
+  max-width: 420px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+.hero-tagline strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray-text);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  animation: bounce 2s infinite;
+}
+.hero-scroll::after {
+  content: '';
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gray-text), transparent);
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ── SECTION COMMON ── */
+section {
+  padding: 100px 48px;
+}
+
+.section-header {
+  margin-bottom: 64px;
+}
+
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 8vw, 80px);
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.section-title .outline {
+  -webkit-text-stroke: 2px rgba(255,255,255,0.2);
+  color: transparent;
+}
+
+/* ── A BOX ── */
+#abox {
+  background: var(--gray-dark);
+  border-top: 1px solid var(--gray-line);
+  border-bottom: 1px solid var(--gray-line);
+}
+
+.abox-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.abox-left .section-header { margin-bottom: 32px; }
+
+.abox-body {
+  color: #aaa;
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 28px;
+  text-align: justify;
+}
+
+.abox-body strong { color: var(--white); font-weight: 700; }
+
+.abox-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--gray-line);
+  border: 1px solid var(--gray-line);
+  margin-top: 40px;
+}
+
+.stat {
+  background: var(--black);
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: var(--blue);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  display: block;
+}
+
+.stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gray-text);
+  text-transform: uppercase;
+  margin-top: 6px;
+  display: block;
+}
+
+.abox-visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.abox-card {
+  background: var(--gray-mid);
+  border: 1px solid var(--gray-line);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.abox-card:first-child {
+  grid-column: 1 / -1;
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.abox-card-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.abox-card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+}
+
+.abox-card-text {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+}
+
+.abox-card:first-child .abox-card-text { color: rgba(255,255,255,0.85); }
+
+/* ── MODALIDADES ── */
+#modalidades {
+  background: var(--black);
+  max-width: 100%;
+}
+
+.modalidades-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.modalidades-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--gray-line);
+  border: 1px solid var(--gray-line);
+}
+
+.mod-card {
+  background: var(--black);
+  padding: 52px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+  justify-content: space-between;
+}
+.mod-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+  opacity: 0.15;
+  z-index: 0;
+}
+.mod-card > *:not(.mod-card-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+.mod-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+  z-index: 2;
+}
+
+.mod-card:hover { background: var(--gray-dark); }
+.mod-card:hover::before { transform: scaleX(1); }
+
+.mod-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 72px;
+  color: rgba(255, 255, 255, 0.12);
+  line-height: 1;
+  position: absolute;
+  top: 16px; right: 24px;
+  letter-spacing: 0;
+  transition: color 0.3s, text-shadow 0.3s;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.35);
+}
+.mod-card:hover .mod-num {
+  color: rgba(26, 26, 255, 0.15);
+  -webkit-text-stroke: 1.5px var(--blue);
+  text-shadow: 0 0 40px rgba(26, 26, 255, 0.4);
+}
+
+.mod-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 4vw, 52px);
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.mod-tag {
+  display: inline-block;
+  background: var(--blue);
+  padding: 4px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+
+.mod-desc {
+  font-size: 15px;
+  color: #888;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.mod-desc strong { color: var(--white); font-weight: 700; }
+
+.mod-features {
+  list-style: none;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mod-features li {
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mod-features li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+
+/* ── HORÁRIOS ── */
+#horarios {
+  background: var(--gray-dark);
+  border-top: 1px solid var(--gray-line);
+  border-bottom: 1px solid var(--gray-line);
+}
+
+.horarios-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.horarios-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--gray-line);
+  border: 1px solid var(--gray-line);
+}
+
+.horario-block {
+  background: var(--black);
+  padding: 52px 48px;
+}
+
+.horario-block-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(52px, 7vw, 72px);
+  letter-spacing: 0.1em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.horario-badge {
+  display: inline-block;
+  background: var(--blue);
+  padding: 7px 16px;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  margin-bottom: 40px;
+}
+
+.day-group { margin-bottom: 28px; }
+
+.day-label {
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: var(--gray-text);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.time-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.time-pill {
+  background: var(--blue);
+  color: var(--white);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 4vw, 38px);
+  letter-spacing: 0.05em;
+  padding: 10px 22px 8px;
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+  cursor: default;
+  transition: filter 0.15s, transform 0.15s;
+}
+
+.time-pill:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+}
+
+.time-pill.wide { flex: 100%; min-width: unset; }
+
+/* ── CONTACTO ── */
+#contacto {
+  background: var(--black);
+}
+
+.contacto-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gray-text);
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: var(--gray-mid);
+  border: 1px solid var(--gray-line);
+  color: var(--white);
+  padding: 14px 18px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--blue);
+  background: rgba(26,26,255,0.05);
+}
+
+.form-group select option { background: var(--gray-dark); }
+
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.btn-submit {
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: 18px 40px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 8px;
+}
+.btn-submit:hover { background: var(--blue-dim); }
+.btn-submit:active { transform: scale(0.99); }
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contact-info-block {
+  border-left: 3px solid var(--blue);
+  padding-left: 24px;
+}
+
+.contact-info-block h4 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.contact-info-block p {
+  font-size: 15px;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.contact-info-block p strong { color: var(--white); font-weight: 700; }
+
+.social-links {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gray-mid);
+  border: 1px solid var(--gray-line);
+  color: var(--white);
+  text-decoration: none;
+  padding: 14px 22px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: border-color 0.2s, background 0.2s;
+  flex: 1;
+  justify-content: center;
+}
+
+.social-link:hover {
+  border-color: var(--blue);
+  background: rgba(26,26,255,0.08);
+}
+
+.social-icon {
+  width: 18px;
+  height: 18px;
+  fill: var(--white);
+  flex-shrink: 0;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--gray-dark);
+  border-top: 1px solid var(--gray-line);
+  padding: 32px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo span:first-child {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  margin-right: 8px;
+}
+.footer-logo span:last-child {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--gray-text);
+  vertical-align: middle;
+}
+
+.footer-copy {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--gray-text);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ── FORM SUCCESS MSG ── */
+.form-success {
+  display: none;
+  background: rgba(26,26,255,0.1);
+  border: 1px solid var(--blue);
+  padding: 20px 24px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  text-align: center;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  section { padding: 80px 24px; }
+  .abox-inner,
+  .contacto-inner { grid-template-columns: 1fr; gap: 48px; }
+  .modalidades-grid { grid-template-columns: 1fr; }
+  .horarios-grid { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 12px; text-align: center; }
+  .form-row { grid-template-columns: 1fr; }
+  .abox-visual { grid-template-columns: 1fr; }
+  .abox-card:first-child { grid-column: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <img src="logo.jpg" alt="PACE Hybrid Box" style="height: 48px; width: auto; object-fit: contain;">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#abox">A Box</a></li>
+    <li><a href="#modalidades">Modalidades</a></li>
+    <li><a href="#horarios">Horários</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#contacto" class="nav-cta">Marcar Aula</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-img"></div>
+    <div class="hero-bg-overlay"></div>
+  </div>
+  <span class="hero-eyebrow">Viseu · Portugal</span>
+  <img src="logo_blank.png" alt="PACE Hybrid Box" style="max-width: clamp(240px, 40vw, 520px); width: 100%; height: auto; object-fit: contain; margin-bottom: 8px; position: relative; z-index: 2;">
+  <p class="hero-tagline" style="position: relative; z-index: 2;">Treina mais. Vai mais longe.<br><strong>Supera os teus limites</strong> com Cross, Hyrox e Personal Training.</p>
+  <div class="hero-scroll" style="z-index: 2;">Scroll</div>
+</section>
+
+<!-- A BOX -->
+<section id="abox">
+  <div class="abox-inner">
+    <div class="abox-left">
+      <div class="section-header">
+        <span class="section-eyebrow">Quem Somos</span>
+        <div class="section-title">A <span class="outline">BOX</span></div>
+      </div>
+      <p class="abox-body">
+        A <strong>PACE Hybrid Box</strong> nasceu em Viseu com uma missão clara: criar um espaço onde o treino de alta intensidade encontra a comunidade. Somos mais do que um ginásio — somos um ecossistema de atletas, coaches e pessoas determinadas a evoluir.
+      </p>
+      <p class="abox-body">
+        Seja o teu objetivo a competição HYROX, a progressão no Cross ou o treino personalizado com acompanhamento, na PACE tens tudo o que precisas para chegar mais longe.
+      </p>
+      <div class="abox-stats">
+        <div class="stat">
+          <span class="stat-num">3</span>
+          <span class="stat-label">Modalidades</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">6</span>
+          <span class="stat-label">Dias/Semana</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Comprometidos</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="abox-visual">
+      <div class="abox-card">
+        <div class="abox-card-icon">🏆</div>
+        <div class="abox-card-title">COMUNIDADE ACIMA DE TUDO</div>
+        <p class="abox-card-text">Na PACE, cada membro faz parte de algo maior.<br>O teu sucesso é o nosso sucesso — dentro e fora da box.</p>
+      </div>
+      <div class="abox-card">
+        <div class="abox-card-icon">⚡</div>
+        <div class="abox-card-title">COACHES ESPECIALIZADOS</div>
+        <p class="abox-card-text">Treina com profissionais certificados, apaixonados pelo que fazem.</p>
+      </div>
+      <div class="abox-card">
+        <div class="abox-card-icon">🎯</div>
+        <div class="abox-card-title">RESULTADOS REAIS</div>
+        <p class="abox-card-text">Programação estruturada para evoluíres a cada sessão, ao teu ritmo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODALIDADES -->
+<section id="modalidades">
+  <div class="modalidades-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">O Que Treinamos</span>
+      <div class="section-title">MODALIDADES</div>
+    </div>
+    <div class="modalidades-grid">
+
+      <div class="mod-card">
+        <div class="mod-card-bg" style="background-image: url('cross2.png');"></div>
+        <span class="mod-num">01</span>
+        <div>
+          <div class="mod-title">CROSS</div>
+          <span class="mod-tag">Força &amp; Condicionamento</span>
+          <p class="mod-desc" style="margin-top:16px;">Treino funcional de alta intensidade que combina <strong>ginástica, levantamento olímpico e cardio</strong>. Cada aula é diferente — nunca te vais aborrecer.</p>
+        </div>
+        <ul class="mod-features">
+          <li>Aulas adaptáveis para todos os níveis</li>
+          <li>WODs programados diariamente</li>
+          <li>6 horários por dia (seg–sex) + Sábado</li>
+        </ul>
+      </div>
+
+      <div class="mod-card">
+        <div class="mod-card-bg" style="background-image: url('hyrox.png');"></div>
+        <span class="mod-num">02</span>
+        <div>
+          <div class="mod-title">HYROX</div>
+          <span class="mod-tag">Fitness Race</span>
+          <p class="mod-desc" style="margin-top:16px;">Prepara-te para a <strong>competição de fitness mais rápida do mundo</strong>. Treino específico para as 8 estações e 8km de corrida que definem o HYROX.</p>
+        </div>
+        <ul class="mod-features">
+          <li>Treino orientado para competição</li>
+          <li>5 sessões semanais</li>
+          <li>Manhã e noite disponíveis</li>
+        </ul>
+      </div>
+
+      <div class="mod-card">
+        <div class="mod-card-bg" style="background-image: url('pt.png');"></div>
+        <span class="mod-num">03</span>
+        <div>
+          <div class="mod-title">PERSONAL TRAINING</div>
+          <span class="mod-tag">1 a 1</span>
+          <p class="mod-desc" style="margin-top:16px;">Treino <strong>100% personalizado</strong> com um coach dedicado. Programa adaptado aos teus objetivos, ritmo e disponibilidade.</p>
+        </div>
+        <ul class="mod-features">
+          <li>Avaliação física inicial</li>
+          <li>Acompanhamento contínuo de progressão</li>
+          <li>Horário flexível</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HORÁRIOS -->
+<section id="horarios">
+  <div class="horarios-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Planeamento</span>
+      <div class="section-title">HORÁRIOS</div>
+    </div>
+    <div class="horarios-grid">
+
+      <!-- HYROX -->
+      <div class="horario-block">
+        <div class="horario-block-title">HYROX</div>
+        <div class="horario-badge">H O R Á R I O S</div>
+
+        <div class="day-group">
+          <div class="day-label">Segunda · Quarta · Sexta</div>
+          <div class="time-grid">
+            <div class="time-pill wide">06:30</div>
+          </div>
+        </div>
+        <div class="day-group">
+          <div class="day-label">Terça · Quinta</div>
+          <div class="time-grid">
+            <div class="time-pill wide">19:00</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CROSS -->
+      <div class="horario-block">
+        <div class="horario-block-title">CROSS</div>
+        <div class="horario-badge">H O R Á R I O S</div>
+
+        <div class="day-group">
+          <div class="day-label">Segunda a Sexta</div>
+          <div class="time-grid">
+            <div class="time-pill">06:30</div>
+            <div class="time-pill">07:30</div>
+            <div class="time-pill">10:00</div>
+            <div class="time-pill wide">12:30</div>
+            <div class="time-pill">18:15</div>
+            <div class="time-pill">19:30</div>
+          </div>
+        </div>
+        <div class="day-group">
+          <div class="day-label">Sábado</div>
+          <div class="time-grid">
+            <div class="time-pill wide">10:00</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contacto-inner">
+    <div>
+      <div class="section-header" style="margin-bottom: 40px;">
+        <span class="section-eyebrow">Vem Treinar</span>
+        <div class="section-title">MARCAR <span class="outline">AULA</span></div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nome <span style="color:var(--blue)">*</span></label>
+          <input type="text" id="field-nome" placeholder="O teu nome">
+        </div>
+        <div class="form-group">
+          <label>Telefone <span style="color:var(--blue)">*</span></label>
+          <input type="tel" id="field-telefone" placeholder="+351 9XX XXX XXX">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="email@exemplo.com">
+      </div>
+
+      <div class="form-group">
+        <label>Modalidade de Interesse <span style="color:var(--blue)">*</span></label>
+        <select id="field-modalidade">
+          <option value="" disabled selected>Escolhe uma modalidade</option>
+          <option>Cross</option>
+          <option>Hyrox</option>
+          <option>Personal Training</option>
+          <option>Ainda não sei — quero saber mais</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Mensagem (opcional)</label>
+        <textarea placeholder="Conta-nos um pouco sobre os teus objetivos..."></textarea>
+      </div>
+
+      <button class="btn-submit" onclick="handleSubmit()">Enviar Pedido de Aula</button>
+      <div class="form-success" id="formSuccess">✓ &nbsp;Mensagem enviada! Entraremos em contacto em breve.</div>
+      <div class="form-success" id="formError" style="background:rgba(255,40,40,0.08);border-color:#ff2828;display:none;"></div>
+    </div>
+
+    <div class="contact-info">
+      <div class="contact-info-block">
+        <h4>Localização</h4>
+        <p><strong>PACE Hybrid Box</strong><br>R. Estr. Velha 229, Bloco 8 Fração A<br>3505-581 Viseu, Portugal</p>
+      </div>
+
+      <div class="contact-info-block">
+        <h4>Horário de Atendimento</h4>
+        <p>
+          <strong>Segunda a Sexta</strong><br>06:30 – 13:30 / 17:00 – 20:30<br><br>
+          <strong>Sábado</strong><br>09:00 – 13:00
+        </p>
+      </div>
+
+      <div class="contact-info-block">
+        <h4>Redes Sociais</h4>
+        <p style="margin-bottom:14px;">Segue-nos e fica a par de tudo o que acontece na box.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/pacehybridbox/" target="_blank" class="social-link">
+            <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/pacehybridbox" target="_blank" class="social-link">
+            <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-copy">COPYRIGHT © <span id="footer-year"></span> PACE HYBRID BOX. TODOS OS DIREITOS RESERVADOS.</p>
+</footer>
+
+<script>
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+function handleSubmit() {
+  const nomeEl = document.getElementById('field-nome');
+  const telefoneEl = document.getElementById('field-telefone');
+  const modalidadeEl = document.getElementById('field-modalidade');
+
+  const nome = nomeEl.value.trim();
+  const telefone = telefoneEl.value.trim();
+  const modalidade = modalidadeEl.value;
+
+  // Reset borders
+  nomeEl.style.borderColor = '';
+  telefoneEl.style.borderColor = '';
+  modalidadeEl.style.borderColor = '';
+
+  if (!nome || !telefone || !modalidade) {
+    if (!nome) nomeEl.style.borderColor = '#ff2828';
+    if (!telefone) telefoneEl.style.borderColor = '#ff2828';
+    if (!modalidade) modalidadeEl.style.borderColor = '#ff2828';
+
+    const err = document.getElementById('formError');
+    err.textContent = '⚠ Por favor preenche os campos obrigatórios';
+    err.style.display = 'block';
+    document.getElementById('formSuccess').style.display = 'none';
+    return;
+  }
+
+  document.getElementById('formError').style.display = 'none';
+  const success = document.getElementById('formSuccess');
+  success.style.display = 'block';
+  setTimeout(() => { success.style.display = 'none'; }, 5000);
+}
+</script>
+
+</body>
+</html>
